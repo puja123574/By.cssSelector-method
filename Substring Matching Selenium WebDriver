@@ -1,0 +1,30 @@
+# By.cssSelector-method
+package tpackage;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Sub_string {
+public static void main(String[] args) {
+//set the system property for chrome driver
+System.setPropert("webdriver.chrome.driver", "C:\\Users\\JTP\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//creating the object for chrome driver 
+WebDriver driver = new ChromeDriver();
+//maximize the browser size 
+driver.manage().window().maximize(); 
+//navigate to the URL
+driver.get("https://mail.rediff.com/cgi-bin/login.cgi");
+//Identify the username textbox and pass the value
+driver.findElement(By.cssSelector("input[id*='logi']")). sendKeys("admin11@rediff.com");
+System.out.println("username value is entered");
+//Identify the password text box and pass the value
+driver.findElement(By.cssSelector("input[id*='passwo']")).sendKeys("admin");
+System.out.println("password value is entered");
+//identify the go button
+driver.findElement(By.cssSelector("input[name*='proc']")).click();
+System.out.println("go button is cliked");
+//close the browser
+driver.close();
+} 
+} 
+ 
